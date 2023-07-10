@@ -1,1 +1,5 @@
-usuario: sdasdasdas, contrasena: dsadasdsa
+email: hola, contraseña: hola, nombre: hola
+email: lgdslfdlsfs, contraseña: ldsflsdl, nombre: gldfgldslf
+email: asd, contraseña: asd, nombre: sdasdas
+email: gdsfds, contraseña: asd, nombre: sadasdsa
+email: asdfgh, contraseña: asdfh, nombre: asdfgh

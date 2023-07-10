@@ -1,6 +1,9 @@
-from paquete.cliente import Cliente
+from paquete.personas import Cliente, Usuario
 from paquete.menu import menu
-import paquete.usuario
+
+usuario = Usuario("John Doe", "johndoe@email.com", "registro.txt")
+
+cliente = Cliente("Jane Doe", "janedoe@email.com", "registro.txt")
 
 cliente = Cliente("John Doe", "johndoe@email.com", "123 Main St")
 cliente.agregar_a_lista("Computadora")
@@ -19,4 +22,4 @@ print("Los objetos en tu carrito de compras son:")
 for item in cliente:
     print(item)
 
-menu()
+menu(usuario)

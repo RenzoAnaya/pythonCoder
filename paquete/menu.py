@@ -1,10 +1,6 @@
 
-from .usuario import Usuario
 
-
-def menu():
-
-  user = Usuario("registro.txt")
+def menu(user):
 
   while True:
     print("Bienvenido al Menú. Escribe el número de la opción que deseas usar")
