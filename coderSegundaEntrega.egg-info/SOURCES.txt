@@ -1,0 +1,10 @@
+README.md
+setup.py
+coderSegundaEntrega.egg-info/PKG-INFO
+coderSegundaEntrega.egg-info/SOURCES.txt
+coderSegundaEntrega.egg-info/dependency_links.txt
+coderSegundaEntrega.egg-info/top_level.txt
+paquete/__init__.py
+paquete/cliente.py
+paquete/menu.py
+paquete/usuario.py
