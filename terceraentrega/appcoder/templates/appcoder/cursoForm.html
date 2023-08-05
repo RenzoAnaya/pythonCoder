@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="">
+    {% csrf_token %}
+    <h1>Crear nuevo curso</h1>
+    <p>Curso: <input type="text" name="nombre" id="nombre"></p>
+    <p>Comisión: <input type="number" name="comision" id="comision"></p>
+    <input type="submit" value="Enviar"/>
+    </form>
+</body>
+</html>

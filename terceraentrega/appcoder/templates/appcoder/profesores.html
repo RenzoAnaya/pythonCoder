@@ -1,0 +1,36 @@
+{% extends 'appcoder/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Profesores
+{% endblock titulo %}
+
+{% block cabecera %}
+    Profesores
+{% endblock cabecera %}
+
+
+{% block contenido %}
+    <h1>Profesores</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre del Profesor</th>
+                <th>Apellido del Profesor</th>
+                <th>Email del Profesor</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for profesor in profesores %}
+        <tr>
+            <td>{{profesor.id}}</td>
+            <td>{{profesor.nombre}}</td>
+            <td>{{profesor.apellido}}</td>   
+            <td>{{profesor.email}}</td> 
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+{% endblock contenido %}

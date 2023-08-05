@@ -1,0 +1,33 @@
+{% extends "appcoder/base.html" %}
+{% load static %}
+
+{% block cabecera %}
+Cursos de la comision {{comision}}
+{% endblock cabecera %}
+
+
+{% block contenido %}  
+        <form action="/aplicacion/buscar2" method="get">
+            {% csrf_token %}
+            <input type="text" name="comision" placeholder="comision">
+            <input type="submit" value="Buscar">
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre del Curso</th>
+                    <th>Comisión</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for curso in cursos%}
+            <tr>
+                <td>{{curso.id}}</td>
+                <td>{{curso.nombre}}</td>
+                <td>{{curso.comision}}</td>   
+            </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+{% endblock contenido %}

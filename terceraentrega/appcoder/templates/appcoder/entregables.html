@@ -1,0 +1,36 @@
+{% extends 'appcoder/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Entregables
+{% endblock titulo %}
+
+{% block cabecera %}
+    Entregables
+{% endblock cabecera %}
+
+
+{% block contenido %}
+    <h1>Entregables</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre del Entregable</th>
+                <th>Fecha de entrega</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entregable in entregables%}
+        <tr>
+            <td>{{entregable.id}}</td>
+            <td>{{entregable.nombre}}</td>
+            <td>{{entregable.fechaEntrega}}</td>   
+            <td>{{entregable.entregado}}</td> 
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+{% endblock contenido %}

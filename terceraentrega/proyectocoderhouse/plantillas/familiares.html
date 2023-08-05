@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familiares</title>
+</head>
+<body>
+    <h1>Tu familia</h1>
+    <div>
+        <h1>Tú</h1>
+        <p>{{familiar.nombre}}</p>
+        <p>{{familiar.apellido_paterno}}</p>
+        <p>{{familiar.apellido_materno}}</p>
+        <p>{{familiar.edad_de_matrimonio}}</p>
+        <p>{{familiar.fecha_de_nacimiento}}</p>
+    </div>    
+    <div>
+        <h2>Padres:</h2>
+    {%for padre in familiar.padres.all%}
+    <div>
+        <p>Nombre:{{padre.nombre}}</p>
+        <p>Apellido paterno:{{padre.apellido_paterno}}</p>
+        <p>Edad de matrimonio:{{padre.edad_de_matrimonio}}</p>
+        <p>Fecha nacimiento:{{padre.fecha_de_nacimiento}}</p>
+    </div>
+    {%endfor%}
+    </div>
+    <div>
+        <h3>Hijos:</h3>
+        {% for hijo in familiar.hijos.all %}
+            <div>
+                <p>{{hijo.nombre}}</p>
+                <p>{{hijo.apellido_paterno}}</p>
+                <p>{{hijo.apellido_materno}}</p>
+                <p>{{hijo.edad_de_matrimonio}}</p>
+                <p>{{hijo.fecha_de_nacimiento}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "appcoder/base.html" %}
+    
+{% block busqueda %}
+    <form action="/aplicacion/buscar2" method="get">
+        {% csrf_token %}
+        <input type="text" name="comision" placeholder="comision">
+        <input type="submit" value="Buscar">
+    </form>
+
+{% endblock busqueda %}
+    
