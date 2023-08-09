@@ -1,0 +1,21 @@
+{% extends "appcoder/base.html" %}
+{% load static %}
+{% block titulo %}
+Avatar
+{% endblock titulo %}
+{% block cabecera %}
+Avatar
+{% endblock cabecera %}
+
+
+{% block contenido %}
+    <form class="form" action="" method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <h3>Avatar actual</h3>
+        <img src="{{ request.session.avatar }}" height="100px" width="100px" >
+        <table>
+            {{form.as_p}}
+        </table>
+        <button type="submit" value="Crear">Subir</button>
+    </form>
+{% endblock contenido %}

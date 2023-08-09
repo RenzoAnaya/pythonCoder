@@ -12,7 +12,11 @@
 
 
 {% block contenido %}
+    <div>
     <h1>Profesores</h1>
+    <a href="{% url 'profesor_form' %}">
+    <i class="fa fa-plus fa-sm" title="Agregar profesor"></i></a>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -20,6 +24,8 @@
                 <th>Nombre del Profesor</th>
                 <th>Apellido del Profesor</th>
                 <th>Email del Profesor</th>
+                <th>Profesión</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -27,8 +33,18 @@
         <tr>
             <td>{{profesor.id}}</td>
             <td>{{profesor.nombre}}</td>
-            <td>{{profesor.apellido}}</td>   
+            <td>{{profesor.apellido}}</td>  
+            <td> {{profesor.profesion}} </td> 
             <td>{{profesor.email}}</td> 
+            <td>
+            <a href="{% url 'update_profesor' profesor.id %}">
+                <i class="fa fa-edit fa-sm" title="Update record"></i>
+            </a>
+
+            <a href="{% url 'delete_profesor' profesor.id %}">
+                <i class="fa fa-trash fa-sm" title="Delete record"></i>
+            </a>
+            </td>
         </tr>
         {%endfor%}
         </tbody>

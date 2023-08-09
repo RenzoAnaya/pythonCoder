@@ -1,0 +1,23 @@
+{% extends 'appcoder/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Alumnos
+{% endblock titulo %}
+
+{% block cabecera %}
+    Alumnos
+{% endblock cabecera %}
+
+
+{% block contenido %}
+
+<form class="form" action="" method="POST">
+        {% csrf_token %}
+        <h3>Desde borrar</h3>
+        <p style="color:red">Si</p>
+        <input type="submit" value="Crear">
+    </form>
+
+{% endblock contenido %}

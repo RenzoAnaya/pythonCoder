@@ -25,30 +25,44 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-            <a class="navbar-brand" href="{% url 'inicio' %}">Home</a>
+
+                <a class="navbar-brand" href="{% url 'inicio' %}">Home</a>
+
+                {% if user.is_authenticated %}
+                
                 <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle navbar-brand"id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Ver
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="navbar-brand" href="{% url 'cursos' %}">Cursos</a>
-                    <a class="navbar-brand" href="{% url 'profesores' %}">Profesores</a>
-                    <a class="navbar-brand" href="{% url 'estudiantes' %}">Estudiantes</a>
-                    <a class="navbar-brand" href="{% url 'entregables' %}">Entregables</a>
-                </div>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="navbar-brand" href="{% url 'cursos' %}">Cursos</a>
+                        <a class="navbar-brand" href="{% url 'profesores' %}">Profesores</a>
+                        <a class="navbar-brand" href="{% url 'estudiantes' %}">Estudiantes</a>
+                        <a class="navbar-brand" href="{% url 'entregables' %}">Entregables</a>
+                    </div>
                 </div>
                 <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle navbar-brand" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Crear
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="navbar-brand" href="{% url 'curso_form2' %}">Cursos</a>
-                    <a class="navbar-brand" href="{% url 'profesor_form' %}">Profesores</a>
-                    <a class="navbar-brand" href="{% url 'estudiante_form' %}">Estudiantes</a>
-                    <a class="navbar-brand" href="{% url 'entregable_form' %}">Entregables</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="navbar-brand" href="{% url 'curso_form2' %}">Cursos</a>
+                        <a class="navbar-brand" href="{% url 'profesor_form' %}">Profesores</a>
+                        <a class="navbar-brand" href="{% url 'estudiante_form' %}">Estudiantes</a>
+                        <a class="navbar-brand" href="{% url 'entregable_form' %}">Entregables</a>
+                        <a class="navbar-brand" href="{% url 'admin:index' %}">Admin</a>
+                    </div>
                 </div>
-            </div>
-            <a class="navbar-brand" href="{% url 'admin:index' %}">Admin</a>
+                <a class="navbar-brand" href="{% url 'logout' %}">Logout</a>
+                <div>
+                    <img src="{{ request.session.avatar }}" height="40px" width="40px"/>
+                    <p class="navbar-brand"> {{user.username | upper}} </p>
+                </div>
+                {% else %}
+                
+                <a class="navbar-brand" href="{% url 'login' %}">Login</a>
+
+                {% endif %}
             </div>
         </nav>
 
@@ -128,6 +142,8 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- Fontawesome-->
+        <script src="https://kit.fontawesome.com/fc36a57d03.js" crossorigin="anonymous"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

@@ -1,0 +1,45 @@
+{% extends 'appcoder/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Alumnos
+{% endblock titulo %}
+
+{% block cabecera %}
+    Alumnos
+{% endblock cabecera %}
+
+
+{% block contenido %}
+
+
+    <h1>Alumnos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre del alumno</th>
+                <th>Apellido del alumno</th>
+                <th>Email del alumno</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for estudiante in estudiante_list %}
+        <tr>
+            <td>{{estudiante.id}}</td>
+            <td>{{estudiante.nombre}}</td>
+            <td>{{estudiante.apellido}}</td>   
+            <td>{{estudiante.email}}</td> 
+            <td>
+            <a href="{% url 'detail_estudiante' estudiante.id %}">O.o</a>
+            <a href="{% url 'update_estudiante' estudiante.id %}">...</a>
+            <a href="{% url 'delete_estudiante' estudiante.id %}">X</a>
+            
+            </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+{% endblock contenido %}
